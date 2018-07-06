@@ -3,6 +3,7 @@ CREATE DATABASE chat;
 USE chat;
 
 CREATE TABLE messages (
+  
   /* Describe your table here.*/
 );
 
