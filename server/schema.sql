@@ -1,6 +1,4 @@
-/* delete db cpmmand goes */
-DROP DATABASE chat;
-
+/* delete db command */
 CREATE DATABASE chat;
 
 USE chat;
@@ -8,7 +6,7 @@ USE chat;
 CREATE TABLE messages (
 
   id INTEGER PRIMARY KEY,
-  user TEXT NOT NULL,
+  currentUser TEXT NOT NULL,
   room INTEGER NOT NULL,
   msg TEXT NOT NULL,
   timesent TIMESTAMP NOT NULL
@@ -20,13 +18,15 @@ CREATE TABLE users (
   userName TEXT NOT NULL
 );
 
-CREATE TABLE posts (
 
+/*
+CREATE TABLE posts (
+  
   msgId INTEGER NOT NULL,
   userId INTEGER NOT NULL,
   FOREIGN KEY (msgId) REFERENCES messages(id),
   FOREIGN KEY (userId) REFERENCES users(id)
-);
+);*/
 
 /* Create other tables and define schemas for them here! */
 

@@ -6,12 +6,24 @@ var mysql = require('mysql');
 
 // and to the database "chat".
 
-modules.exports = dbConnection = mysql.createConnection({
-    user: 'student',
-    password: 'student',
+dbConnection = mysql.createConnection({
+    user: 'root',
+    password: 'plantlife',
     database: 'chat'
 });
 
-dbConnection.connect();
+dbConnection.connect( (err) => {
+    if(err){
+        console.log('Error in dbConection: ', err)
+        return;
+    }
+   
+    // console.log('connect as id ' + dbConnection.threadId);
+});
 
+// dbConnection.end((err) => {
+
+// })
+
+module.exports = dbConnection;
 
